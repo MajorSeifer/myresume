@@ -47,6 +47,7 @@ function validateUser(event){
 
     } else{
       errorMsg = 'I am sorry, this OTP is not valid. Please contact the admin <a href="mailto:manesjona@gmail.com?subject=Ai Chat Bot&body=Hello, I would like to test your chat bot.">here</a>, with your professional email.'
+      document.getElementById("message-error").style.color = "red";
       document.getElementById("message-error").innerHTML = `${errorMsg}`;
      
       var objDiv = document.getElementById("messageBox2");
