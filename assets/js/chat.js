@@ -1,5 +1,5 @@
 var send = document.getElementById("send");
-const url = 'http://athannemasserver-env.eba-mvprpm5z.eu-west-3.elasticbeanstalk.com' //'http://localhost:5000'
+const url = 'http://athannemasserver-env.eba-mvprpm5z.eu-west-3.elasticbeanstalk.com'
 var stompClient = null;
 var username = null;
 
