@@ -1,5 +1,5 @@
 var send = document.getElementById("send");
-const url = 'http://athannemasserver-env.eba-mvprpm5z.eu-west-3.elasticbeanstalk.com'
+const url = 'https://chatbot.athan-nemas.com'
 var stompClient = null;
 var username = null;
 
@@ -34,9 +34,6 @@ function validateUser(event){
   fetch(url + '/is-user-registered', {
     method: 'POST',
     body: input,
-    headers:{
-    referrerPolicy: 'unsafe_url',
-  } ,
   })
   .then(response => {
     console.log('User is valid: ' + response.ok);
