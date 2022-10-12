@@ -89,7 +89,7 @@ document.getElementById("textInput2").value = "";
 function onMessageReceived(payload) {
   console.log(payload);
     document.getElementById("messageBox2").innerHTML += `<div class="second-chat">
-              <div class="circle" id="circle-mar"></div>
+              <div class="circle" id="circle-mar">AI</div>
               <p>${payload.body}</p>
               <div class="arrow"></div>
             </div>`;

@@ -1392,6 +1392,12 @@ section {
   margin-right: 5px;
 }
 .message-box .second-chat #circle-mar {
+  padding: 8px;
+
+  color: #fff;
+  text-align: center;
+
+  font: 12px Arial, sans-serif;
   margin-top: 5px;
 }
 
