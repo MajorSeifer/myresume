@@ -1,5 +1,5 @@
 var send = document.getElementById("send");
-const url = 'https://chatbot.athan-nemas.com'
+const url = 'https://major-server.be'
 var stompClient = null;
 var username = null;
 
