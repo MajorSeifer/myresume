@@ -1234,14 +1234,14 @@ section {
 .chat-bar-open {
   text-align: center;
   position: fixed;
-  bottom: 40px;
+  bottom: 75px;
   right: 50px;
 }
 .chat-bar-close {
   display: none;
   text-align: center;
   position: fixed;
-  bottom: 40px;
+  bottom: 75px;
   right: 50px;
 }
 .chat-bar-open .close,
@@ -1318,11 +1318,6 @@ section {
   top: 3px;
 }
 
-
-
-
-
-
 .chat-window {
   display: none;
   width: 332px;
@@ -1332,7 +1327,7 @@ section {
   padding: 16px;
   z-index: 9999999;
   position: fixed;
-  bottom: 120px;
+  bottom: 150px;
   right: 54px;
   box-shadow: rgb(0 0 0 / 10%) 0px 1px 6px, rgb(0 0 0 / 20%) 0px 2px 24px;
 }
