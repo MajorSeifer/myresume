@@ -1,5 +1,5 @@
 var send = document.getElementById("send");
-const url = 'http://localhost:5000'
+const url = 'https://major-server.be'
 var stompClient = null;
 var username = null;
 
