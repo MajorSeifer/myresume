@@ -1,0 +1,30 @@
+body {
+background-color:black;
+font-family: system-ui;
+}
+
+h1, h2, h3, h4, h5, h6, p{
+    color: rgb(0,255,0)
+}
+
+table{
+    color: rgb(0,255,0);
+}
+
+ul {
+    color: rgb(0,255,0);
+}
+
+footer{
+    color: rgb(0,255,0);
+}
+
+#center, footer{
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+footer{
+    text-align: center;
+}

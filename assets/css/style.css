@@ -1,30 +1,175 @@
 body {
-background-color:black;
-font-family: system-ui;
+    padding: 10px;
+    background-color: #0a192f;
+    align-content: center;
 }
 
-h1, h2, h3, h4, h5, h6, p{
-    color: rgb(0,255,0)
+.angry-grid {
+    display: grid; 
+ 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    gap: 0px;
+    width:100%;
+ }
+   
+ #item-0 {
+ 
+    background-color: #386641; 
+    grid-row-start: 1;
+    grid-column-start: 1;
+ 
+    grid-row-end: 2;
+    grid-column-end: 3;
+    
+ }
+ #item-1 {
+ 
+    background-color: #a7c957; 
+    grid-row-start: 2;
+    grid-column-start: 2;
+ 
+    grid-row-end: 4;
+    grid-column-end: 4;
+    
+ }
+ #item-2 {
+ 
+    background-color: #6a994e; 
+    grid-row-start: 1;
+    grid-column-start: 3;
+ 
+    grid-row-end: 2;
+    grid-column-end: 4;
+    
+ }
+ #item-3 {
+ 
+    background-color: #386641; 
+    grid-row-start: 1;
+    grid-column-start: 4;
+ 
+    grid-row-end: 3;
+    grid-column-end: 5;
+    
+ }
+ #item-4 {
+ 
+    background-color: #386641; 
+    grid-row-start: 3;
+    grid-column-start: 1;
+ 
+    grid-row-end: 5;
+    grid-column-end: 2;
+    
+ }
+ #item-5 {
+ 
+    background-color: #6a994e; 
+    grid-row-start: 3;
+    grid-column-start: 4;
+ 
+    grid-row-end: 4;
+    grid-column-end: 5;
+    
+ }
+ #item-6 {
+ 
+    background-color: #386641; 
+    grid-row-start: 4;
+    grid-column-start: 3;
+ 
+    grid-row-end: 5;
+    grid-column-end: 5;
+    
+ }
+ #item-7 {
+ 
+    background-color: #6a994e; 
+    grid-row-start: 4;
+    grid-column-start: 2;
+ 
+    grid-row-end: 5;
+    grid-column-end: 3;
+    
+ }
+ #item-8 {
+ 
+    background-color: #6a994e; 
+    grid-row-start: 2;
+    grid-column-start: 1;
+ 
+    grid-row-end: 3;
+    grid-column-end: 2;
+    
+ }
+
+.used-languages{
+    width: 100%;
 }
 
-table{
-    color: rgb(0,255,0);
+
+a:link {
+    color: #64ffda;
 }
 
-ul {
-    color: rgb(0,255,0);
+a:visited {
+    color: #64ffda;
 }
 
-footer{
-    color: rgb(0,255,0);
+a:hover {
+    color: lightgreen;
 }
 
-#center, footer{
-    max-width: 500px;
-    margin: auto;
-    padding: 20px;
+a:active {
+    color: lightgreen;
 }
 
-footer{
+
+/*.star-wars {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100px;
+    color: lightblue;
+    font-family: 'Pathway Gothic One', sans-serif;
+    font-size: 300%;
+    font-weight: bold;
+    letter-spacing: 6px;
+    line-height: 150%;
+    perspective: 400px;
+    text-align: justify;
+}
+
+.scroll {
+    position: relative;
+    transform-origin: 50% 100%;
+    animation: scroll 60s linear;
+}
+
+h1 {
+    font-size: 200%;
     text-align: center;
+    text-transform: uppercase;
 }
+
+
+@keyframes scroll {
+    0% {
+        top: 0;
+        transform: rotateX(20deg) translateZ(0);
+    }
+
+    100% {
+        top: -6000px;
+        transform: rotateX(25deg) translateZ(-2500px);
+    }
+}
+
+
+img{
+    margin: 10px;
+    width: 15%;
+    height: auto;
+}*/
