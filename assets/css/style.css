@@ -7,14 +7,13 @@ body {
 }
 
 .wrapper {
-
-    display: grid; 
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px;
     grid-auto-rows: minmax(100px, auto);
- }
-   
+}
+
 .one,
 .two,
 .three,
@@ -24,60 +23,85 @@ body {
 .seven {
     color: #fff;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
- 
- }
- 
+
+}
+
 .one {
     display: flex;
     align-items: center;
     justify-content: center;
     grid-column: 1;
     grid-row: 1/2;
- }
- 
+}
+
 .two {
     padding: 20px;
     background-color: #233554;
     grid-column: 2/5;
     grid-row: 1;
- }
- 
+}
+
+.wrapper-2 {
+    background-color: #0a192f;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+
+
+}
+
+.two-1 {
+
+    grid-column: 1;
+    grid-row: 4;
+}
+
+.two-2 {
+
+    grid-column: 2;
+    grid-row: 4;
+}
+
+.two-3 {
+
+    grid-column: 3;
+    grid-row: 4;
+}
+
 .three {
     padding: 20px;
     background-color: #233554;
     grid-column: 1;
     grid-row: 2 / 4;
- }
- 
+}
+
 .four {
     padding: 20px;
     max-height: 1005px;
     background-color: #233554;
     grid-column: 4;
     grid-row: 2;
- }
- 
+}
+
 .five {
     padding: 20px;
     background-color: #233554;
     grid-column: 2/4;
     grid-row: 3;
- }
- 
+}
+
 .six {
     place-items: center;
     grid-column: 4;
     grid-row: 3;
- }
-    
+}
+
 .seven {
-    display:flex;
+    display: inline;
     grid-column: 2;
     grid-row: 2;
- }
-
- .badges{
- }
+}
 
 .used-languages {
     width: 100%;
@@ -98,51 +122,3 @@ a:hover {
 a:active {
     color: lightgreen;
 }
-
-
-/*.star-wars {
-    display: flex;
-    justify-content: center;
-    position: relative;
-    height: 100px;
-    color: lightblue;
-    font-family: 'Pathway Gothic One', sans-serif;
-    font-size: 300%;
-    font-weight: bold;
-    letter-spacing: 6px;
-    line-height: 150%;
-    perspective: 400px;
-    text-align: justify;
-}
-
-.scroll {
-    position: relative;
-    transform-origin: 50% 100%;
-    animation: scroll 60s linear;
-}
-
-h1 {
-    font-size: 200%;
-    text-align: center;
-    text-transform: uppercase;
-}
-
-
-@keyframes scroll {
-    0% {
-        top: 0;
-        transform: rotateX(20deg) translateZ(0);
-    }
-
-    100% {
-        top: -6000px;
-        transform: rotateX(25deg) translateZ(-2500px);
-    }
-}
-
-
-img{
-    margin: 10px;
-    width: 15%;
-    height: auto;
-}*/
