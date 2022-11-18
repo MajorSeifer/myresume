@@ -7,97 +7,98 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+button {
   padding: 0;
   margin: 0;
 }
 
 h1 {
-  font-size: 30px;
-  font-weight: normal;
+  font-size: 25px;
 }
 
-h2,
-h3 {
-  font-size: 16px;
+h2 {
+  font-size: 18px;
 }
 
-h3 {
-  text-decoration: underline;
-  text-underline-offset: 10px;
-}
-
-h4 {
-  font-size: 10px;
-  margin-top: -5px;
-  font-weight: lighter;
+p {
+  font-size: 14px;
 }
 
 .container {
   position: absolute;
-  background-color: white;
+  background-color: whitesmoke;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  width: 350px;
-  height: 550px;
+  width: 1024px;
+  height: 600px;
+  color: #404258;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
 }
 
-.background {
-  background-image: url(../image/background.jpg);
+.logo {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+
+.menu {
+  grid-area: 1 / 5 / 2 / 6;
+}
+
+.ride {
+  grid-area: 1 / 1 / 11 / 6;
+  background-color: #404258;
+}
+
+.photo {
+  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
+  background-image: url("../image/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  grid-area: 1 / 1 / 4 / 4;
+  grid-area: 2 / 4 / 10 / 9;
 }
 
-.name {
+.contact {
   color: white;
-  margin-left: 20px;
-
-  grid-area: 2 / 1 / 3 / 2;
+  font-size: 12px;
+  grid-area: 7 / 1 / 9 / 3;
 }
 
-.profession {
-  color: white;
-  margin-left: 20px;
-
-  grid-area: 3 / 1 / 4 / 2;
-}
-
-.about {
-  margin-left: 20px;
-
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas:
-    "resume"
-    "social"
-    "buttons";
-  grid-area: 4 / 1 / 6 / 3;
-}
-
-.buttons {
-  grid-area: buttons;
+.ul-contact {
+  list-style-type: none;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  line-height: 25px;
 }
 
 .social {
-  grid-area: social;
+  margin-top: 25px;
+  grid-area: 9 / 1 / 10 / 3;
 }
 
-.resume {
-  margin-top: 15px;
-  grid-area: resume;
-  max-width: 90%;
+.ul-social {
+  list-style-type: none;
+  align-self: center;
+  align-items: center;
+  position: absolute;
+  display: flex;
+}
+
+.about {
+  grid-area: 4 / 10 / 6 / 14;
+}
+
+.button {
+  padding-top: 40px;
+  grid-area: 6 / 10 / 7 / 14;
 }
 
 .fa {
@@ -108,73 +109,55 @@ h4 {
   text-align: center;
   text-decoration: none;
   border-radius: 50%;
-  color: rgb(113, 113, 128);
+  color: white;
+}
+
+.fa:hover {
+  color: coral;
 }
 
 .button-1 {
-  background-color: rgb(44, 44, 44);
+  background-color: #404258;
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  font-size: 12px;
-  padding: 5px;
+  padding: 5px 15px;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-
 }
 
 .button-2 {
   border-radius: 12px;
   text-align: center;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 14px;
   margin: 4px 2px;
   cursor: pointer;
-  font-size: 12px;
-  padding: 5px;
-  border: 1px solid rgb(44, 44, 44);
+  padding: 5px 15px;
+  border: 1px solid #404258;
   box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
 
 }
 
-
-.stats {
-  color: rgb(44, 44, 44);
-
-  margin: auto;
-  height: 85%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  gap: 0px 0px;
-  grid-template-areas:
-    "projects"
-    "followers"
-    "views";
-  grid-area: 4 / 3 / 6 / 4;
-  justify-content: end;
-  text-align: center;
+a.button-3,
+a.button-2 {
+  color: #404258;
 }
 
-.projects {
-  grid-area: projects;
+a:visited.button-3,
+a:visited.button-2 {
+  color: #404258;
 }
 
-.followers {
-  grid-area: followers;
+a:hover.button-3,
+a:hover.button-2,
+a:hover.button-1 {
+  color: coral;
 }
 
-.views {
-  grid-area: views;
-}
-
-a:button-1 {
-  color: white;
-}
-
-a:visited.button-1 {
+a.button-1 {
   color: white;
 }
 
@@ -184,36 +167,13 @@ a:link {
 }
 
 a:visited {
-  color: rgb(44, 44, 44);
+  color: white;
 }
 
 a:hover {
-  color: rgb(44, 44, 44);
+  color: coral;
 }
 
 a:active {
   color: rgb(44, 44, 44);
-}
-
-.contact {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  align-self: center;
-  align-items: center;
-  position: absolute;
-  bottom: 125px;
-
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  align-self: center;
-  align-items: center;
-  position: absolute;
-  bottom: 0px;
-  display: flex;
-  bottom: 80px;
 }
