@@ -1,0 +1,317 @@
+// --------------------------------------------------------------
+// Variables
+// --------------------------------------------------------------
+$primaryColor: #404258;
+$accentColor: coral;
+$secondaryColor: whitesmoke;
+$shadow: rgba(0, 0, 0, 0.1);
+$bodyBackground: rgb(44, 44, 44);
+$backgroundImage: url("../image/background.jpg");
+
+// --------------------------------------------------------------
+// Mixins
+// --------------------------------------------------------------
+@mixin draw-button {
+    border-radius: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    padding: 5px 15px;
+    @include shadow-border($shadow);
+}
+
+@mixin config-button($color) {
+
+    a.button-3,
+    a.button-2 {
+        color: $color;
+    }
+
+    a:visited.button-3,
+    a:visited.button-2 {
+        color: $color;
+    }
+
+    a:hover.button-3,
+    a:hover.button-2,
+    a:hover.button-1 {
+        color: $accentColor;
+    }
+
+    .button-1 {
+        a {
+            color: $color;
+        }
+    }
+
+    a:link {
+        text-decoration: none;
+        color: $secondaryColor;
+    }
+
+    a:visited {
+        color: $secondaryColor;
+    }
+
+    a:hover {
+        color: $accentColor;
+    }
+
+    a:active {
+        color: $primaryColor;
+    }
+
+    .custom-hover:hover {
+        color: $secondaryColor;
+    }
+
+    .button-1 {
+        @include draw-button();
+        background-color: $primaryColor;
+    }
+
+    .button-2 {
+        @include draw-button();
+        border: 1px solid $primaryColor;
+    }
+}
+
+@mixin config-list() {
+    list-style-type: none;
+    align-self: center;
+    align-items: center;
+    position: absolute;
+}
+
+@mixin config-container($width, $height) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: $width;
+    height: $height;
+    color: $primaryColor;
+}
+
+@mixin shadow-border($color) {
+    box-shadow: 0px 8px 8px $color;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background-color: $bodyBackground;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 25px;
+}
+
+h2 {
+    font-size: 18px;
+}
+
+p {
+    font-size: 14px;
+}
+
+.fa {
+    padding-right: 10px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+    color: $secondaryColor;
+}
+
+.fa:hover {
+    color: $accentColor;
+}
+
+.contact {
+    ul {
+        @include config-list();
+        line-height: 25px;
+    }
+}
+
+.social {
+    ul {
+        @include config-list();
+        display: flex;
+    }
+}
+
+.photo {
+    @include shadow-border($shadow);
+}
+
+.about-card{
+    visibility: hidden;
+    display: none;
+}
+
+/*--------------------------------------------------------------
+# Smartphones
+--------------------------------------------------------------*/
+@media screen and (max-width:1280px) {
+    .container {
+        @include config-container(350px, 550px);
+        color: $secondaryColor;
+        background-color: $primaryColor;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .photo {
+        background-image: $backgroundImage;
+        height: 50%;
+    }
+
+    .contact {
+        margin-left: -15px;
+        margin-top: 15px;
+    }
+
+    .about {
+        padding: 20px;
+        margin-top: -150px;
+
+        p {
+            color: $primaryColor;
+        }
+    }
+
+    .social {
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        position: relative;
+        bottom: -125px;
+        left: -15px;
+        right: auto;
+    }
+
+    @include config-button($secondaryColor);
+
+    .button-1,
+    .button-2 {
+        border: 1px solid $secondaryColor;
+    }
+
+    .button-1 {
+        margin-left: 20px;
+    }
+}
+
+
+/*--------------------------------------------------------------
+# Computers
+--------------------------------------------------------------*/
+@media screen and (min-width:1280px) {
+    .container {
+        @include config-container(75%, 90%);
+        background-color: $secondaryColor;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+    }
+
+    .logo {
+        grid-area: 1 / 1 / 2 / 2;
+    }
+
+    .menu {
+        grid-area: 1 / 5 / 2 / 6;
+    }
+
+    .ride {
+        grid-area: 1 / 1 / 11 / 6;
+        background-color: $primaryColor;
+    }
+
+    .photo {
+        background-image: $backgroundImage;
+        grid-area: 2 / 4 / 10 / 9;
+        &:hover{
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            transform: rotateY(360deg);
+            background-color: $bodyBackground;
+            background-image: none;
+            border-radius: 25px;
+            .about-card{
+                visibility: visible;
+                display: flex;
+                justify-content: center;
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+                align-content: center;
+                text-align: justify;
+                padding: 20px;
+                color: $secondaryColor;
+                img{
+                    border: 3px solid $secondaryColor;
+                    width: 150px;
+                    height: 150px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .contact {
+        color: $secondaryColor;
+        font-size: 12px;
+        grid-area: 7 / 1 / 9 / 3;
+        ul {
+            @include config-list();
+            line-height: 25px;
+        }
+    }
+
+    .social {
+        margin-top: 25px;
+        grid-area: 9 / 1 / 10 / 3;
+        ul {
+            @include config-list();
+            display: flex;
+        }
+    }
+
+    .about {
+        color: $primaryColor;
+        grid-area: 4 / 10 / 6 / 14;
+    }
+
+    .button {
+        margin-top: 40px;
+        grid-area: 6 / 10 / 7 / 14;
+    }
+
+    @include config-button($primaryColor);
+}
