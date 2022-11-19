@@ -215,10 +215,11 @@ a:hover.button-1 {
   .photo:hover {
     transition: transform 1s;
     transform-style: preserve-3d;
-    transform: rotateY(360deg);
-    background-color: rgb(44, 44, 44);
+    transform: rotateY(180deg) scaleX(-1);
+    background-color: coral;
     background-image: none;
     border-radius: 25px;
+    border: 2px solid whitesmoke;
   }
   .photo:hover .about-card {
     visibility: visible;

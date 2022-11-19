@@ -11,7 +11,7 @@ $backgroundImage: url("../image/background.jpg");
 // --------------------------------------------------------------
 // Mixins
 // --------------------------------------------------------------
-@mixin draw-button {
+@mixin draw-button() {
     border-radius: 12px;
     text-align: center;
     text-decoration: none;
@@ -166,15 +166,16 @@ p {
     @include shadow-border($shadow);
 }
 
-.about-card{
+.about-card {
     visibility: hidden;
     display: none;
 }
 
+
 /*--------------------------------------------------------------
 # Smartphones
 --------------------------------------------------------------*/
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1280px){
     .container {
         @include config-container(350px, 550px);
         color: $secondaryColor;
@@ -255,14 +256,17 @@ p {
     .photo {
         background-image: $backgroundImage;
         grid-area: 2 / 4 / 10 / 9;
-        &:hover{
+
+        &:hover {
             transition: transform 1s;
             transform-style: preserve-3d;
-            transform: rotateY(360deg);
-            background-color: $bodyBackground;
+            transform: rotateY(180deg) scaleX(-1);
+            background-color: $accentColor;
             background-image: none;
             border-radius: 25px;
-            .about-card{
+            border: 2px solid $secondaryColor;
+
+            .about-card {
                 visibility: visible;
                 display: flex;
                 justify-content: center;
@@ -273,7 +277,8 @@ p {
                 text-align: justify;
                 padding: 20px;
                 color: $secondaryColor;
-                img{
+
+                img {
                     border: 3px solid $secondaryColor;
                     width: 150px;
                     height: 150px;
@@ -288,6 +293,7 @@ p {
         color: $secondaryColor;
         font-size: 12px;
         grid-area: 7 / 1 / 9 / 3;
+
         ul {
             @include config-list();
             line-height: 25px;
@@ -297,6 +303,7 @@ p {
     .social {
         margin-top: 25px;
         grid-area: 9 / 1 / 10 / 3;
+
         ul {
             @include config-list();
             display: flex;
