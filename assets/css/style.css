@@ -2,7 +2,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: rgb(44, 44, 44);
 }
 
@@ -88,7 +88,7 @@ p {
     flex-direction: column;
   }
   .photo {
-    background-image: url("../image/background.jpg");
+    background-image: url("../image/background.webp");
     height: 50%;
   }
   .contact {
@@ -209,7 +209,7 @@ a:hover.button-1 {
     background-color: #404258;
   }
   .photo {
-    background-image: url("../image/background.jpg");
+    background-image: url("../image/background.webp");
     grid-area: 2/4/10/9;
   }
   .photo:hover {
@@ -220,12 +220,11 @@ a:hover.button-1 {
     background-image: none;
     border-radius: 25px;
     border: 2px solid whitesmoke;
+    font-family: monospace;
   }
   .photo:hover .about-card {
     visibility: visible;
     display: flex;
-    justify-content: center;
-    position: relative;
     flex-direction: column;
     align-items: center;
     align-content: center;
@@ -267,6 +266,15 @@ a:hover.button-1 {
   .about {
     color: #404258;
     grid-area: 4/10/6/14;
+  }
+  .about .typing-effect {
+    width: 22ch;
+    -webkit-animation: typing 2s steps(22), step-end infinite alternate;
+            animation: typing 2s steps(22), step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 2em;
   }
   .button {
     margin-top: 40px;
@@ -329,5 +337,15 @@ a:hover.button-1 {
     background-repeat: no-repeat;
     background-size: cover;
     border: 1px solid #404258;
+  }
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
   }
 }/*# sourceMappingURL=style.css.map */
