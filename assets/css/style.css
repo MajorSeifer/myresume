@@ -1,351 +1,456 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Mixin
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: rgb(44, 44, 44);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  padding: 0;
   margin: 0;
 }
 
-h1 {
-  font-size: 25px;
-}
-
-h2 {
-  font-size: 18px;
-}
-
-p {
-  font-size: 14px;
-}
-
-.fa {
-  padding-right: 10px;
-  font-size: 18px;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 50%;
-  color: whitesmoke;
-}
-
-.fa:hover {
-  color: coral;
-}
-
-.contact ul {
-  list-style-type: none;
-  align-self: center;
-  align-items: center;
-  position: absolute;
-  line-height: 25px;
-}
-
-.social ul {
-  list-style-type: none;
-  align-self: center;
-  align-items: center;
-  position: absolute;
-  display: flex;
-}
-
-.photo {
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-  background-repeat: no-repeat;
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+header {
+  background-image: url("../image/photos/image-header.jpg");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+}
+header img {
+  align-self: center;
+  width: 12%;
+  left: 0;
+}
+header h1 {
+  text-align: center;
+  font-family: "Fraunces";
+  font-size: 4em;
+  color: hsl(0deg, 0%, 100%);
+  text-transform: uppercase;
+}
+header .top-nav {
+  overflow: hidden;
+  position: relative;
+}
+header .top-nav a {
+  color: hsl(0deg, 0%, 100%);
+  padding: 5vmin;
+  text-decoration: none;
+  font-size: 2em;
+  display: block;
+}
+header .top-nav a.icon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+header .top-nav .active img {
+  height: 4vh;
+  width: auto;
 }
 
-.about-card {
-  visibility: hidden;
-  display: none;
-}
-
-/*--------------------------------------------------------------
-# Smartphones
---------------------------------------------------------------*/
-@media screen and (max-width: 1280px) {
-  .container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
+@media screen and (min-width: 800px) {
+  header img {
+    align-self: center;
+    width: 6%;
     left: 0;
-    right: 0;
-    margin: auto;
-    width: 350px;
-    height: 550px;
-    color: #404258;
-    color: whitesmoke;
-    background-color: #404258;
+  }
+  header .nav-menu-width ul {
     display: flex;
-    flex-direction: column;
+    position: absolute;
+    list-style-type: none;
+    top: 0;
+    right: 0;
   }
-  .photo {
-    background-image: url("../image/background.webp");
-    height: 50%;
+  header .nav-menu-width ul li {
+    font-size: 0.5em;
+    font-family: "Barlow";
   }
-  .contact {
-    margin-left: -15px;
-    margin-top: 15px;
+  header .nav-menu-width ul li :hover {
+    border-radius: 15%;
+    background: hsl(0deg, 0%, 100%);
+    color: hsl(212deg, 27%, 19%);
+    font-weight: bold;
   }
-  .about {
-    padding: 20px;
-    margin-top: -150px;
-  }
-  .about p {
-    color: #404258;
-  }
-  .social {
-    align-items: center;
-    align-content: center;
-    width: 100%;
-    position: relative;
-    bottom: -125px;
-    left: -15px;
-    right: auto;
-  }
-  a.button-3,
-a.button-2 {
-    color: whitesmoke;
-  }
-  a:visited.button-3,
-a:visited.button-2 {
-    color: whitesmoke;
-  }
-  a:hover.button-3,
-a:hover.button-2,
-a:hover.button-1 {
-    color: coral;
-  }
-  .button-1 a {
-    color: whitesmoke;
-  }
-  a:link {
-    text-decoration: none;
-    color: whitesmoke;
-  }
-  a:visited {
-    color: whitesmoke;
-  }
-  a:hover {
-    color: coral;
-  }
-  a:active {
-    color: #404258;
-  }
-  .custom-hover:hover {
-    color: whitesmoke;
-  }
-  .button-1 {
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    padding: 5px 15px;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #404258;
-  }
-  .button-2 {
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    padding: 5px 15px;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid #404258;
-  }
-  .button-1,
-.button-2 {
-    border: 1px solid whitesmoke;
-  }
-  .button-1 {
-    margin-left: 20px;
+  header .icon {
+    visibility: hidden;
   }
 }
 /*--------------------------------------------------------------
-# Computers
+# Card
 --------------------------------------------------------------*/
-@media screen and (min-width: 1280px) {
-  .container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 75%;
-    height: 90%;
-    color: #404258;
-    background-color: whitesmoke;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-  }
-  .logo {
-    grid-area: 1/1/2/2;
-  }
-  .menu {
-    grid-area: 1/5/2/6;
-  }
-  .ride {
-    grid-area: 1/1/11/6;
-    background-color: #404258;
-  }
-  .photo {
-    background-image: url("../image/background.webp");
-    grid-area: 2/4/10/9;
-  }
-  .photo:hover {
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    transform: rotateY(180deg) scaleX(-1);
-    background-color: coral;
-    background-image: none;
-    border-radius: 25px;
-    border: 2px solid whitesmoke;
-    font-family: monospace;
-  }
-  .photo:hover .about-card {
-    visibility: visible;
+.section-card {
+  display: flex;
+  flex-direction: column;
+}
+.section-card .card-1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../image/photos/image-transform.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-card .card-2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10%;
+}
+.section-card .card-2 h2 {
+  font-family: "Fraunces";
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.section-card .card-2 p {
+  color: hsl(232deg, 10%, 55%);
+  font-family: "Barlow";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+.section-card .card-2 h3 {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  -webkit-text-decoration-color: hsl(51deg, 100%, 49%);
+          text-decoration-color: hsl(51deg, 100%, 49%);
+  text-decoration-thickness: 0.3rem;
+}
+.section-card .card-3 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../image/photos/image-stand-out.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section-card .card-4 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10%;
+}
+.section-card .card-4 h2 {
+  font-family: "Fraunces";
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.section-card .card-4 p {
+  color: hsl(232deg, 10%, 55%);
+  font-family: "Barlow";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+.section-card .card-4 h3 {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  -webkit-text-decoration-color: hsl(7deg, 99%, 70%);
+          text-decoration-color: hsl(7deg, 99%, 70%);
+  text-decoration-thickness: 0.3rem;
+}
+.section-card .card-5 {
+  background-image: url("../image/photos/image-graphic-design.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+.section-card .card-5 h2 {
+  position: absolute;
+  width: 100%;
+  top: 65vh;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Fraunces";
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.section-card .card-5 p {
+  margin: 10% 0;
+  position: absolute;
+  top: 85vh;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+.section-card .card-6 {
+  background-image: url("../image/photos/image-photography.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+}
+.section-card .card-6 h2 {
+  position: absolute;
+  width: 100%;
+  top: 65vh;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Fraunces";
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.section-card .card-6 p {
+  margin: 10% 0;
+  position: absolute;
+  top: 85vh;
+  color: hsl(167deg, 40%, 24%);
+  font-family: "Barlow";
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.75rem;
+}
+
+@media screen and (min-width: 800px) {
+  .section-card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    align-content: center;
-    text-align: justify;
-    padding: 20px;
-    color: whitesmoke;
+    text-align: start;
   }
-  .photo:hover .about-card img {
-    border: 3px solid whitesmoke;
-    width: 150px;
-    height: 150px;
-    -o-object-fit: cover;
-       object-fit: cover;
+  .section-card .row-1 {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .section-card .row-1 article {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .section-card .row-1 .card-2 {
+    text-align: start;
+    justify-content: center;
+  }
+  .section-card .row-1 .card-2 h2 {
+    padding: 0 15%;
+    font-size: 3rem;
+  }
+  .section-card .row-1 .card-2 p {
+    padding: 0 15%;
+  }
+  .section-card .row-1 .card-2 h3 {
+    padding: 0 15%;
+  }
+  .section-card .row-2 {
+    display: flex;
+  }
+  .section-card .row-2 article {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .section-card .row-2 .card-4 {
+    text-align: start;
+    justify-content: center;
+  }
+  .section-card .row-2 .card-4 h2 {
+    padding: 0 15%;
+    font-size: 3rem;
+  }
+  .section-card .row-2 .card-4 p {
+    padding: 0 15%;
+  }
+  .section-card .row-2 .card-4 h3 {
+    padding: 0 15%;
+  }
+  .section-card .row-3 {
+    display: flex;
+  }
+  .section-card .row-3 article {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  .section-card .row-3 article p {
+    padding: 0 20%;
+  }
+}
+/*--------------------------------------------------------------
+# Testimonial
+--------------------------------------------------------------*/
+.section-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+.section-testimonial h2 {
+  margin-top: 15%;
+  color: hsl(232deg, 10%, 55%);
+  text-transform: uppercase;
+  font-size: 1.2em;
+  letter-spacing: 0.3em;
+}
+.section-testimonial article {
+  padding: 5% 15%;
+}
+.section-testimonial article img {
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+}
+.section-testimonial article h3 {
+  font-family: "Fraunces";
+  font-weight: 700;
+}
+.section-testimonial article h4 {
+  color: hsl(210deg, 4%, 67%);
+  font-family: "Barlow";
+}
+.section-testimonial article p {
+  color: hsl(213deg, 9%, 39%);
+  font-family: "Barlow";
+  font-weight: bolder;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .section-testimonial {
+    padding-top: 10vh;
+  }
+  .section-testimonial h2 {
+    font-size: 2rem;
+  }
+  .section-testimonial .container {
+    margin: 15vh 0;
+    display: flex;
+    flex-direction: row;
+  }
+  .section-testimonial .container .testimonial-card {
+    padding: 5%;
+    width: 1/3;
+    height: auto;
+  }
+  .section-testimonial .container .testimonial-card img {
     border-radius: 50%;
+    width: 1/3;
+    height: auto;
   }
-  .contact {
-    color: whitesmoke;
-    font-size: 12px;
-    grid-area: 7/1/9/3;
-  }
-  .contact ul {
-    list-style-type: none;
-    align-self: center;
-    align-items: center;
-    position: absolute;
-    line-height: 25px;
-  }
-  .social {
-    margin-top: 25px;
-    grid-area: 9/1/10/3;
-  }
-  .social ul {
-    list-style-type: none;
-    align-self: center;
-    align-items: center;
-    position: absolute;
+}
+/*--------------------------------------------------------------
+# Gallery
+--------------------------------------------------------------*/
+.section-gallery {
+  display: flex;
+  flex-direction: row;
+}
+.section-gallery article {
+  display: flex;
+  flex-direction: column;
+}
+.section-gallery article img {
+  width: 100%;
+  height: 100%;
+}
+
+@media screen and (min-width: 800px) {
+  .section-gallery article {
     display: flex;
+    flex-direction: row;
   }
-  .about {
-    color: #404258;
-    grid-area: 4/10/6/14;
+  .section-gallery article img {
+    width: 50%;
   }
-  .about .typing-effect {
-    width: 22ch;
-    -webkit-animation: typing 2s steps(22), step-end infinite alternate;
-            animation: typing 2s steps(22), step-end infinite alternate;
-    white-space: nowrap;
-    overflow: hidden;
-    font-family: monospace;
-    font-size: 2em;
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  color: hsl(167deg, 40%, 24%);
+  background-color: hsl(168deg, 34%, 41%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+}
+footer .logo img {
+  height: 7vh;
+  margin: 5vh;
+}
+footer .menu-list {
+  width: 90%;
+  display: inline-block;
+}
+footer .menu-list ul {
+  font-family: "Barlow";
+  font-size: 1.25rem;
+  font-weight: 600;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+footer .menu-list ul li {
+  width: 20rem;
+}
+footer .social-list {
+  width: 75%;
+  display: inline-block;
+}
+footer .social-list ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+footer .social-list ul li {
+  width: 15rem;
+}
+footer .social-list ul li .fa {
+  font-size: 2rem;
+  margin-top: 10vh;
+}
+
+@media screen and (min-width: 800px) {
+  footer {
+    display: flex;
+    align-items: center;
   }
-  .button {
-    margin-top: 40px;
-    grid-area: 6/10/7/14;
+  footer .menu-list {
+    width: 40vw;
   }
-  a.button-3,
-a.button-2 {
-    color: #404258;
+  footer .menu-list ul {
+    font-family: "Barlow";
+    font-size: 1.25rem;
+    font-weight: 600;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
   }
-  a:visited.button-3,
-a:visited.button-2 {
-    color: #404258;
-  }
-  a:hover.button-3,
-a:hover.button-2,
-a:hover.button-1 {
-    color: coral;
-  }
-  .button-1 a {
-    color: #404258;
-  }
-  a:link {
-    text-decoration: none;
-    color: whitesmoke;
-  }
-  a:visited {
-    color: whitesmoke;
-  }
-  a:hover {
-    color: coral;
-  }
-  a:active {
-    color: #404258;
-  }
-  .custom-hover:hover {
-    color: whitesmoke;
-  }
-  .button-1 {
-    border-radius: 12px;
+  footer .menu-list ul li {
     text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    padding: 5px 15px;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: #404258;
   }
-  .button-2 {
-    border-radius: 12px;
+  footer .social-list {
+    width: 30vw;
+  }
+  footer .social-list ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+  footer .social-list ul li {
     text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    padding: 5px 15px;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: 1px solid #404258;
-  }
-  @-webkit-keyframes typing {
-    from {
-      width: 0;
-    }
-  }
-  @keyframes typing {
-    from {
-      width: 0;
-    }
   }
 }/*# sourceMappingURL=style.css.map */
