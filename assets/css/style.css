@@ -450,6 +450,9 @@ footer .social-list ul li .fa {
     text-align: center;
     text-decoration: none;
   }
+  footer .menu-list ul li :hover {
+    color: white;
+  }
   footer .social-list {
     width: 30vw;
   }
@@ -460,5 +463,8 @@ footer .social-list ul li .fa {
   }
   footer .social-list ul li {
     text-align: center;
+  }
+  footer .fa:hover {
+    color: white;
   }
 }/*# sourceMappingURL=style.css.map */

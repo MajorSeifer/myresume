@@ -481,11 +481,16 @@ footer {
         li {
           text-align: center;
           text-decoration: none;
+          :hover{
+            color: white;
+          }
         }
       }
+      
     }
     .social-list {
       width: 30vw;
+    
       ul {
         list-style-type: none;
         display: flex;
@@ -493,6 +498,11 @@ footer {
         li {
           text-align: center;
         }
+      }
+    }
+    .fa{
+      &:hover{
+        color: white;
       }
     }
   }
