@@ -1,338 +1,499 @@
-// --------------------------------------------------------------
-// Variables
-// --------------------------------------------------------------
-$primaryColor: #404258;
-$accentColor: coral;
-$secondaryColor: whitesmoke;
-$shadow: rgba(0, 0, 0, 0.1);
-$bodyBackground: rgb(44, 44, 44);
-$backgroundImage: url("../image/background.webp");
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+// Layout properties
+$layoutWidth: 1440px;
 
+// Primary colors
+$softRed: hsl(7, 99%, 70%);
+$yellow: hsl(51, 100%, 49%);
+$darkDesaturatedCyan: hsl(167, 40%, 24%);
+$darkBlue: hsl(198, 62%, 26%);
+$darkModerateCyan: hsl(168, 34%, 41%);
 
-// --------------------------------------------------------------
-// Mixins
-// --------------------------------------------------------------
-@mixin draw-button() {
-    border-radius: 12px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
-    margin: 4px 2px;
-    cursor: pointer;
-    padding: 5px 15px;
-    @include shadow-border($shadow);
+// Neutral color
+$veryDarkDesaturatedBlue: hsl(212, 27%, 19%);
+$veryDarkGrayishBlue: hsl(213, 9%, 39%);
+$darkGrayishBlue: hsl(232, 10%, 55%);
+$grayishBlue: hsl(210, 4%, 67%);
+$white: hsl(0, 0%, 100%);
+
+// Typography
+$fontFamily: "Barlow";
+$fontFamilyWeight: 600;
+$fontFamilyAlt: "Fraunces";
+$fontFamilyWeightAlt: 700;
+$bodyFontSize: 1.25rem;
+
+/*--------------------------------------------------------------
+# Mixin
+--------------------------------------------------------------*/
+@mixin set-background($urlBackground) {
+  background-image: url($urlBackground);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-@mixin config-button($color) {
+@mixin config-text-card($color) {
+  text-align: center;
 
-    a.button-3,
-    a.button-2 {
-        color: $color;
-    }
+  h2 {
+    font-family: $fontFamilyAlt;
+    font-size: 2.5rem;
+    font-weight: $fontFamilyWeightAlt;
+  }
 
-    a:visited.button-3,
-    a:visited.button-2 {
-        color: $color;
-    }
+  p {
+    color: $darkGrayishBlue;
+    font-family: $fontFamily;
+    font-size: $bodyFontSize;
+    font-weight: $fontFamilyWeightAlt;
+    line-height: 1.75rem;
+  }
 
-    a:hover.button-3,
-    a:hover.button-2,
-    a:hover.button-1 {
-        color: $accentColor;
-    }
-
-    .button-1 {
-        a {
-            color: $color;
-        }
-    }
-
-    a:link {
-        text-decoration: none;
-        color: $secondaryColor;
-    }
-
-    a:visited {
-        color: $secondaryColor;
-    }
-
-    a:hover {
-        color: $accentColor;
-    }
-
-    a:active {
-        color: $primaryColor;
-    }
-
-    .custom-hover:hover {
-        color: $secondaryColor;
-    }
-
-    .button-1 {
-        @include draw-button();
-        background-color: $primaryColor;
-    }
-
-    .button-2 {
-        @include draw-button();
-        border: 1px solid $primaryColor;
-    }
+  h3 {
+    font-size: 1.5rem;
+    text-decoration: underline;
+    text-decoration-color: $color;
+    text-decoration-thickness: 0.3rem;
+  }
 }
 
-@mixin config-list() {
-    list-style-type: none;
-    align-self: center;
-    align-items: center;
+@mixin config-picture-card {
+  height: 125vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-align: center;
+
+  h2 {
     position: absolute;
-}
+    width: 100%;
+    top: 65vh;
+    color: $darkDesaturatedCyan;
+    font-family: $fontFamilyAlt;
+    font-size: 2.5rem;
+    font-weight: $fontFamilyWeightAlt;
+  }
 
-@mixin config-container($width, $height) {
+  p {
+    margin: 10% 0;
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: $width;
-    height: $height;
-    color: $primaryColor;
+    top: 85vh;
+    color: $darkDesaturatedCyan;
+    font-family: $fontFamily;
+    font-size: $bodyFontSize;
+    font-weight: $fontFamilyWeightAlt;
+    line-height: 1.75rem;
+  }
 }
-
-@mixin shadow-border($color) {
-    box-shadow: 0px 8px 8px $color;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
 body {
-    font-family:'Roboto', sans-serif;;
-    background-color: $bodyBackground;
+  margin: 0;
 }
-
-h1,
-h2,
-h3,
-h4 {
-    padding: 0;
-    margin: 0;
-}
-
-h1 {
-    font-size: 25px;
-}
-
-h2 {
-    font-size: 18px;
-}
-
-p {
-    font-size: 14px;
-}
-
-.fa {
-    padding-right: 10px;
-    font-size: 18px;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-    color: $secondaryColor;
-}
-
-.fa:hover {
-    color: $accentColor;
-}
-
-.contact {
-    ul {
-        @include config-list();
-        line-height: 25px;
-    }
-}
-
-.social {
-    ul {
-        @include config-list();
-        display: flex;
-    }
-}
-
-.photo {
-    @include shadow-border($shadow);
-}
-
-.about-card {
-    visibility: hidden;
-    display: none;
-}
-
 
 /*--------------------------------------------------------------
-# Smartphones
+# Header
 --------------------------------------------------------------*/
-@media screen and (max-width:1280px) {
-    .container {
-        @include config-container(350px, 550px);
-        color: $secondaryColor;
-        background-color: $primaryColor;
+header {
+  @include set-background("../image/photos/image-header.jpg");
+  display: flex;
+  flex-direction: column;
+  height: 120vh;
+
+  img {
+    align-self: center;
+    width: 12%;
+    left: 0;
+  }
+
+  h1 {
+    text-align: center;
+    font-family: $fontFamilyAlt;
+    font-size: 4em;
+    color: $white;
+    text-transform: uppercase;
+  }
+
+  .nav-menu-width {
+    display: none;
+  }
+
+  .top-nav {
+    a {
+      color: $white;
+      text-decoration: none;
+      font-size: 1rem;
+      display: block;
+    }
+    .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding: 2rem;
+
+      .fa {
+        font-size: 2rem;
+      }
+    }
+
+    .active {
+      padding: 2rem;
+      img {
+        height: 4vh;
+        width: auto;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  header {
+    img {
+      align-self: center;
+      width: 6%;
+      left: 0;
+    }
+
+    .nav-menu-width {
+      display: flex;
+
+      ul {
+        display: flex;
+        position: absolute;
+        list-style-type: none;
+        top: 0;
+        right: 0;
+
+        li {
+          margin: 1rem 2rem;
+          font-size: 0.5em;
+          font-family: $fontFamily;
+          :hover {
+            border-radius: 15%;
+            background-color: $white;
+            color: $veryDarkDesaturatedBlue;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .icon {
+      visibility: hidden;
+    }
+  }
+}
+
+/*--------------------------------------------------------------
+# Card
+--------------------------------------------------------------*/
+.section-card {
+  display: flex;
+  flex-direction: column;
+
+  .card-1 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @include set-background("../image/photos/image-transform.jpg");
+  }
+
+  .card-2 {
+    display: flex;
+    flex-direction: column;
+    @include config-text-card($yellow);
+    margin: 10%;
+  }
+
+  .card-3 {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    @include set-background("../image/photos/image-stand-out.jpg");
+  }
+
+  .card-4 {
+    display: flex;
+    flex-direction: column;
+    @include config-text-card($softRed);
+    margin: 10%;
+  }
+
+  .card-5 {
+    @include set-background("../image/photos/image-graphic-design.jpg");
+    @include config-picture-card();
+  }
+
+  .card-6 {
+    @include set-background("../image/photos/image-photography.jpg");
+    @include config-picture-card();
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .section-card {
+    display: flex;
+    flex-direction: column;
+    text-align: start;
+
+    .row-1 {
+      display: flex;
+      flex-direction: row-reverse;
+      article {
+        width: 50vw;
         display: flex;
         flex-direction: column;
-    }
+        margin: 0;
+      }
 
-    .photo {
-        background-image: $backgroundImage;
-        height: 50%;
-    }
+      .card-2 {
+        text-align: start;
+        justify-content: center;
 
-    .contact {
-        margin-left: -15px;
-        margin-top: 15px;
-    }
+        h2 {
+          padding: 0 15%;
 
-    .about {
-        padding: 20px;
-        margin-top: -150px;
-
-        p {
-            color: $primaryColor;
+          font-size: 3rem;
         }
+        p {
+          padding: 0 15%;
+        }
+
+        h3 {
+          padding: 0 15%;
+        }
+      }
     }
 
-    .social {
-        align-items: center;
-        align-content: center;
-        width: 100%;
-        position: relative;
-        bottom: -125px;
-        left: -15px;
-        right: auto;
+    .row-2 {
+      display: flex;
+      article {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+      }
+      .card-4 {
+        text-align: start;
+        justify-content: center;
+
+        h2 {
+          padding: 0 15%;
+
+          font-size: 3rem;
+        }
+        p {
+          padding: 0 15%;
+        }
+
+        h3 {
+          padding: 0 15%;
+        }
+      }
     }
 
-    @include config-button($secondaryColor);
-
-    .button-1,
-    .button-2 {
-        border: 1px solid $secondaryColor;
+    .row-3 {
+      display: flex;
+      article {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        p {
+          padding: 0 20%;
+        }
+      }
     }
-
-    .button-1 {
-        margin-left: 20px;
-    }
+  }
 }
 
+/*--------------------------------------------------------------
+# Testimonial
+--------------------------------------------------------------*/
+.section-testimonial {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+
+  h2 {
+    margin-top: 15%;
+    color: $darkGrayishBlue;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    letter-spacing: 0.3em;
+  }
+
+  article {
+    padding: 5% 15%;
+    img {
+      border-radius: 50%;
+      width: 25%;
+      height: 25%;
+    }
+
+    h3 {
+      font-family: $fontFamilyAlt;
+      font-weight: $fontFamilyWeightAlt;
+    }
+
+    h4 {
+      color: $grayishBlue;
+      font-family: $fontFamily;
+    }
+
+    p {
+      color: $veryDarkGrayishBlue;
+      font-family: $fontFamily;
+      font-weight: bolder;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .section-testimonial {
+    padding-top: 10vh;
+    h2 {
+      font-size: 2rem;
+    }
+    .container {
+      margin: 15vh 0;
+      display: flex;
+      flex-direction: row;
+      .testimonial-card {
+        padding: 5%;
+        width: 1/3;
+        height: auto;
+
+        img {
+          border-radius: 50%;
+          width: 1/3;
+          height: auto;
+        }
+      }
+    }
+  }
+}
 
 /*--------------------------------------------------------------
-# Computers
+# Gallery
 --------------------------------------------------------------*/
-@media screen and (min-width:1280px) {
-    .container {
-        @include config-container(75%, 90%);
-        background-color: $secondaryColor;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
+.section-gallery {
+  display: table;
+  img {
+    margin: -1vw 0;
+    width: 50%;
+    height: 50%;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .section-gallery {
+    display: flex;
+    flex-direction: row;
+    img {
+      width: 25%;
     }
+  }
+}
 
-    .logo {
-        grid-area: 1 / 1 / 2 / 2;
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+footer {
+  color: $darkDesaturatedCyan;
+  background-color: $darkModerateCyan;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10vh;
+  padding-top: 10vh;
+  .logo {
+    img {
+      height: 7vh;
+      margin: 5vh;
     }
+  }
 
-    .menu {
-        grid-area: 1 / 5 / 2 / 6;
+  a {
+    color: $darkDesaturatedCyan;
+    text-decoration: none;
+  }
+
+  .menu-list {
+    width: 90%;
+    display: inline-block;
+    color: $darkDesaturatedCyan;
+
+    ul {
+      font-family: $fontFamily;
+      font-size: $bodyFontSize;
+      font-weight: $fontFamilyWeight;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        width: 20rem;
+      }
     }
-
-    .ride {
-        grid-area: 1 / 1 / 11 / 6;
-        background-color: $primaryColor;
-    }
-
-    .photo {
-        background-image: $backgroundImage;
-        grid-area: 2 / 4 / 10 / 9;
-
-        &:hover {
-            transition: transform 1s;
-            transform-style: preserve-3d;
-            transform: rotateY(180deg) scaleX(-1);
-            background-color: $accentColor;
-            background-image: none;
-            border-radius: 25px;
-            border: 2px solid $secondaryColor;
-            font-family: monospace;
-
-            .about-card {
-                visibility: visible;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                align-content: center;
-                text-align: justify;
-                padding: 20px;
-                color: $secondaryColor;
-
-                img {
-                    border: 3px solid $secondaryColor;
-                    width: 150px;
-                    height: 150px;
-                    object-fit: cover;
-                    border-radius: 50%;
-                }
-            }
+  }
+  .social-list {
+    width: 75%;
+    display: inline-block;
+    ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      li {
+        width: 15rem;
+        .fa {
+          font-size: 2rem;
+          margin-top: 10vh;
         }
+      }
     }
+  }
+}
 
-    .contact {
-        color: $secondaryColor;
-        font-size: 12px;
-        grid-area: 7 / 1 / 9 / 3;
+@media screen and (min-width: 800px) {
+  footer {
+    display: flex;
+    align-items: center;
 
-        ul {
-            @include config-list();
-            line-height: 25px;
+    .menu-list {
+      width: 40vw;
+      ul {
+        font-family: $fontFamily;
+        font-size: $bodyFontSize;
+        font-weight: $fontFamilyWeight;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        li {
+          text-align: center;
+          text-decoration: none;
         }
+      }
     }
-
-    .social {
-        margin-top: 25px;
-        grid-area: 9 / 1 / 10 / 3;
-
-        ul {
-            @include config-list();
-            display: flex;
+    .social-list {
+      width: 30vw;
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        li {
+          text-align: center;
         }
+      }
     }
-
-    .about {
-        color: $primaryColor;
-        grid-area: 4 / 10 / 6 / 14;
-
-        .typing-effect {
-            width: 22ch;
-            animation: typing 2s steps(22), step-end infinite alternate;
-            white-space: nowrap;
-            overflow: hidden;
-            font-family: monospace;
-            font-size: 2em;
-        }
-    }
-
-    .button {
-        margin-top: 40px;
-        grid-area: 6 / 10 / 7 / 14;
-    }
-
-    @include config-button($primaryColor);
-
-    @keyframes typing {
-        from {
-            width: 0;
-        }
-    }
+  }
 }
