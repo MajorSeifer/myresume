@@ -1,339 +1,274 @@
-body {
+* {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #f2c49b;
+  padding: 0;
 }
 
-body.dark {
-  background-color: #260c06;
-  color: #f2c49b;
-}
-body.dark header,
-body.dark main,
-body.dark section,
-body.dark article,
-body.dark .about,
-body.dark .inner-section,
-body.dark aside,
-body.dark footer {
-  background-color: #260c06;
-  color: #f2c49b;
-}
-
-header {
-  display: flex;
-  background-color: #8c7503;
-  padding: 2%;
-}
-header img {
-  width: 10vw;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(-45deg, #595cff, #c6f8ff, #ffa585);
+  background-size: 200% 200%;
+  animation: gradient 10s ease infinite;
   height: 100%;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-right: 2vw;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+header {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  background: linear-gradient(-45deg, #c6f8ff, #595cff, #ffa585);
+  min-height: 10vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
 }
 header h1 {
-  margin-top: auto;
-  margin-bottom: auto;
-  font-family: "League Spartan", sans-serif;
-  color: #f2f2f2;
+  margin: 1%;
   font-size: 1.5rem;
-}
-
-nav {
-  overflow: hidden;
-  display: block;
-  width: 100%;
-}
-nav .icon {
-  display: none;
-}
-nav a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
+  font-family: "Urbanist", sans-serif;
   text-align: center;
-  margin-left: 6vw;
-  margin-right: 2vw;
-  padding: 14px 16px;
+}
+header input[type=checkbox] {
+  visibility: hidden;
+}
+header .todo {
+  background: linear-gradient(-45deg, #c6f8ff, #595cff, #ffa585);
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white;
+  padding: 1vh;
+  text-align: center;
   text-decoration: none;
-  font-size: 1.25rem;
+  margin: 1%;
+  min-width: fit-content;
+  font-size: 1rem;
+  font-family: "Urbanist", sans-serif;
+}
+header button {
+  background-color: rgba(89, 92, 255, 0.2588235294);
+  border: 1px solid white;
+  background: linear-gradient(-45deg, #c6f8ff, #595cff, #ffa585);
+  border-radius: 60px;
+  color: white;
+  padding: 2vh;
+  text-align: center;
+  text-decoration: none;
+  margin: 1%;
+  min-width: fit-content;
+  font-size: 1rem;
+  font-family: "Urbanist", sans-serif;
+}
+header a {
+  text-decoration: none;
+  color: white;
 }
 
-.topnav a:hover {
-  background-color: #f2c49b;
-  color: #260c06;
-}
-
-.topnav a.active {
-  background-color: #d9bf3d;
-  color: #260c06;
+a {
+  text-decoration: none;
+  color: black;
 }
 
 main {
-  background-color: #f2c49b;
-}
-main .background {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-main .about {
-  margin: 3%;
-  background-color: #bf815e;
-  font-size: 1.3rem;
-  padding: 2%;
-  margin-bottom: 0;
-  padding-top: 5vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  text-align: justify;
+  justify-content: space-around;
+  min-height: 80vh;
+  margin-top: 45vh;
 }
-main .about h2 {
-  font-family: "Poppins", sans-serif;
-  padding-left: 5%;
-}
-main .title-main {
-  display: flex;
-  flex-direction: row;
-  padding: 3%;
-}
-main .title-main h2 {
-  margin-right: 5vw;
-}
-main .title-main button {
-  background-color: #d9bf3d;
-  border: none;
-  margin-left: 3vw;
-  border-radius: 15px;
-}
-main .title-main button:hover {
-  background-color: #bf815e;
-  color: #260c06;
-}
-main .title-main button:active {
-  background-color: #8c7503;
-  color: #260c06;
-}
-main .title-main button i {
-  font-size: 1.5rem;
-  margin-right: 1vw;
-  color: #8c7503;
-}
-main .cart-button {
-  position: fixed;
-  right: 1vw;
-  top: 35vh;
-  background: none;
-  border: none;
-}
-main .cart-button i {
-  font-size: 2rem;
-  color: #f2f2f2;
-}
-
-.day-night {
-  position: fixed;
-  right: 1vw;
-  top: 25vh;
-  background: none;
-  border: none;
-}
-.day-night i {
-  font-size: 2rem;
-  color: #f2f2f2;
-}
-
-section {
-  margin: auto;
-  background-color: #f2c49b;
+main section {
   display: flex;
   flex-direction: column;
-  padding: 2%;
+  margin: 2%;
+  background-color: rgba(243, 243, 243, 0.6039215686);
+  height: fit-content;
 }
-section article {
-  padding: 5%;
-  margin: 5%;
-  background-color: #bf815e;
-}
-section article .back-section {
-  display: none;
-}
-section article img {
-  width: 100%;
-  height: 30vh;
-  object-fit: cover;
-}
-section article h3 {
+main section h2 {
   font-size: 1rem;
-  height: 2rem;
+  padding: 5%;
+  text-transform: uppercase;
 }
-section article .inner-section {
-  background-color: #bf815e;
+main section article {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin-top: 1%;
+  padding: 2%;
+  text-align: center;
+  border: 2px solid white;
 }
-section article .inner-section button {
-  font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
-  margin: 0;
-  border-radius: 15px;
-  background-color: #8c7503;
+main section article button {
   border: none;
+  background: none;
+  width: fit-content;
+  margin-top: 2%;
+}
+main section article button .fa-solid {
+  right: 5vw;
+  top: 15vh;
+  padding: 1%;
+  color: rgba(255, 0, 0, 0.418);
+  font-size: 1rem;
+}
+main section article h2 {
+  font-size: 1.25rem;
+  padding: 0;
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+}
+main section article h3 {
+  font-size: 1rem;
+  font-family: "Elsie", cursive;
+  padding: 0.5vw;
+}
+main section article h4 {
+  font-family: "Elsie", cursive;
+  padding: 0.5vw;
+}
+main section article p {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Elsie", cursive;
+  padding: 1vw;
+}
+
+.todo-div,
+.doing-div,
+.done-div {
+  min-height: 25vh;
+  padding-bottom: 10vh;
+}
+
+.todo .todo-div article h2 {
+  background-color: rgba(221, 94, 47, 0.4588235294);
+}
+.todo #todo {
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.doing .doing-div article h2 {
+  background-color: rgba(89, 92, 255, 0.4588235294);
+}
+.doing #doing {
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  text-decoration: underline;
+}
+
+.done .done-div article h2 {
+  background-color: rgba(99, 199, 157, 0.4588235294);
+}
+.done #done {
+  text-align: center;
+  font-family: "Urbanist", sans-serif;
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 aside {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  align-items: center;
-  background-color: #8c7503;
-  display: inline-block;
-  vertical-align: middle;
+  display: none;
   flex-direction: column;
-  min-width: 30vw;
-  max-width: 75%;
-  overflow: auto;
+  margin: auto;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+aside input {
+  padding: 2%;
+  margin: 0 5%;
+}
+aside select {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 5%;
+  height: 5vh;
+  font-size: 1.25rem;
+  font-family: "Elsie", cursive;
+}
+aside label {
+  margin-top: 5%;
+  margin-left: 5%;
+  font-family: "Elsie", cursive;
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 aside button {
+  background-color: rgba(89, 92, 255, 0.2588235294);
+  border: 1px solid white;
+  background: linear-gradient(-45deg, #c6f8ff, #595cff, #ffa585);
+  border-radius: 60px;
+  color: white;
+  padding: 2vh;
+  text-align: center;
+  text-decoration: none;
   margin: 5%;
-  padding: 5%;
-  font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
-  border-radius: 15px;
-  background-color: #d9bf3d;
-  border: none;
-}
-aside .shopping-list {
-  margin: 5%;
-  list-style-type: disc;
+  min-width: fit-content;
+  font-size: 1rem;
+  font-family: "Urbanist", sans-serif;
 }
 
 footer {
-  background-color: #8c7503;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(89, 92, 255, 0.2588235294);
+  color: white;
+  padding: 1%;
 }
-footer button {
-  font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
-  border-radius: 15px;
-  background-color: #d9bf3d;
-  border: none;
-  padding: 2%;
-  margin: 2%;
-}
-footer button a {
+footer a {
   text-decoration: none;
+  color: white;
 }
-footer button a:link {
-  color: black;
-}
-footer button a:visited {
-  color: #8c7503;
-}
-footer button a:hover {
-  color: #bf815e;
-}
-footer button a:active {
-  color: #f2c49b;
-}
-footer div {
+footer ul {
   display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  justify-content: space-around;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-top: 2%;
   width: 100%;
 }
-footer div img {
-  width: 50%;
-  margin: 0;
-}
-footer .social {
-  list-style-type: none;
-  padding: 0;
-  font-size: 0;
-  display: flex;
-  justify-content: center;
-  width: 30%;
-  margin: 0;
-}
-footer .social li {
-  margin: 10% 30%;
-  font-size: 2rem;
-  color: #f2f2f2;
-}
-footer .social li a:link {
-  color: #f2f2f2;
-}
-footer .social li a:visited {
-  color: #d9bf3d;
-}
-footer .social li a:hover {
-  color: #bf815e;
-}
-footer .social li a:active {
-  color: #f2c49b;
+footer ul li {
+  margin: 5%;
 }
 
-@media screen and (max-width: 992px) {
-  .topnav a {
-    display: none;
+@media screen and (min-width: 600px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
+  header h1 {
+    width: 100%;
+    margin-left: 2%;
+    text-align: start;
   }
-}
-@media screen and (max-width: 992px) {
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
-  }
-}
-@media screen and (min-width: 768px) {
-  header img {
-    width: 5vw;
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 2vw;
-  }
-  section {
+  main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15vh;
   }
-}
-@media screen and (min-width: 992px) {
-  header img {
-    width: 5vw;
-    height: 100%;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-right: 2vw;
+  aside {
+    margin: auto;
+    margin-top: 20vh;
+    width: 50%;
   }
-  section {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-  }
-}
-@media screen and (max-width: 992px) {
-  main .about .hidden {
-    display: none;
-  }
-  main .about:hover p {
-    display: block;
+  footer ul {
+    display: flex;
+    flex-direction: row;
+    width: 75%;
   }
 }/*# sourceMappingURL=style.css.map */

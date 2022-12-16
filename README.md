@@ -1,25 +1,19 @@
-# Dark Kitchen
+# Project Planner
 
-## Qui a fait le projet ?
-Nous étions un groupe de 4, Aurore Lemaire, Nathalie Goffette, Jonathan Manes et Quentin Bource. 
+Bienvenue dans ce Project Planner !
 
-## Qu'est ce que c'est ? 
-Ceci est un prototype d'un site de cuisine en dark-kitchen.
+Realisé par : 
+- Jonathan Manes
+- Céline Verreydt
+- Edouard de Romrée de Vichenet 
 
-## Quand et où ?
-Nous avons bossé ça du 6 décembre 2022 au 8 décembre 2022. Exercice donné lors de notre formation BeCode pour se familiariser au front-end et Javascript.
+Plannificateur de tâches réalisé en Décembre 2022 (3 jours) dans le cadre d'un exercice rassemblant plusieurs languages tels que (HTML, CSS, SASS, JAVASCRIPT).
 
-## A quoi ça ressemble ?
+Fonctionnalités : 
+- Possibilité de drag and drop les tâches dans les différentes sections (TO DO, DOING, DONE).
+- Possibilité de filtrer les tâches selon leur statut.
+- Supprimer une tâche.
+- Compte à rebours jusqu'à l'échéance des tâches.
 
-C'est un site exclusivement front-end utilisable pour une dark-kitchen.
-
-## Qu'est ce que ça contient ?
-
-C'est une idée de dark-kitchen spécialisée dans les tartines garnies. Il est possible de commander et de gérer son panier
-mais également trier ses tartines selon ses préférences. On peut également passer le site en mode sombre si besoin. 
-
-## La progression 
-Le travail est totalement terminé le 8 décembre 2022.
-
-![Demo](assets/image/demo.png)
+![assets/image/capture.png](assets/image/capture.png)
 
