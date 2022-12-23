@@ -1,115 +1,127 @@
-body {
-  margin: 0;
-  background-image: url("../image/background.webp");
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100vh;
-}
+@import url(https://fonts.googleapis.com/css2?family=Unbounded);
 
-header {
-  button {
-    background-color: #00ffd9;
-    color: #000;
-    cursor: pointer;
-    font-weight: bold;
-    padding: 1%;
-    text-align: center;
-    width: 100%;
-    border: 0;
-    font-size: 1rem;
-    color: #343a40;
-    text-transform: uppercase;
-    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+html {
+  min-height: 100%;
 
-    &:hover {
-      background-color: #fff;
-      border-color: transparent;
-      color: #444;
-    }
-
-    i {
-      margin-right: 1%;
-    }
+  body::-webkit-scrollbar {
+    width: 0.5rem;
   }
-}
-main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
+   
+  body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  body::-webkit-scrollbar-thumb {
+    background-color: rgb(14, 46, 87);
+    outline: 1px solid slategrey;
+  }
 
-  article {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    min-height: 35vh;
-    margin: 5%;
+
+  body {
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 0;
+    font-family: "Unbounded", sans-serif;
 
-    .spinner {
-      display: inline-block;
-      width: 80px;
-      height: 80px;
-      &:after {
-        content: " ";
-        display: block;
-        width: 64px;
-        height: 64px;
-        margin: 8px;
-        border-radius: 50%;
-        border: 6px solid #fff;
-        border-color: #fff transparent #fff transparent;
-        animation: lds-dual-ring 1.2s linear infinite;
-      }
-    }
-
-    img {
-      position: relative;
-      bottom: 0;
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin: 1%;
-    }
-    blockquote {
+    main {
+      min-height: 95vh;
       display: flex;
       flex-direction: column;
-      text-align: center;
       align-items: center;
-      vertical-align: middle;
-      font-family: "Barlow Condensed", sans-serif;
-      width: 100%;
-      margin: auto;
+      justify-content: center;
 
-      h2 {
-        font-family: "Abril Fatface", cursive;
-        font-size: 1.25rem;
-        font-weight: normal;
-        line-height: 1;
-        border: 2px solid #fff;
-        border-radius: 15px;
-        padding: 5%;
+      .center {
+        display: flex;
+        flex-direction: row;
+        input {
+          width: 50vw;
+          box-sizing: border-box;
+          border: 2px solid rgba(255, 255, 255, 0);
+          border-radius: 10px;
+          background-color: white;
+          background-image: url("../image/search-solid.svg");
+          background-position: 10px 10px;
+          background-size: 1.25rem;
+          background-repeat: no-repeat;
+          padding: 12px 20px 12px 40px;
+          font-family: "Unbounded", sans-serif;
+        }
+
+        button {
+          margin-left: 2%;
+          border: 2px solid rgba(255, 255, 255, 0);
+          border-radius: 10px;
+          background-color: white;
+          color: rgb(14, 46, 87);
+          font-family: "Unbounded", sans-serif;
+        }
+      }
+
+      .weather-section {
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        justify-content: center;
+        .div-day {
+          display: flex;
+          flex-direction: column;
+          margin: 2%;
+
+          .inner-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-content: center;
+            vertical-align: middle;
+
+            padding: 2%;
+            background: rgba(255, 255, 255, 0);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border-radius: 10px;
+            article {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              vertical-align: middle;
+              padding: 2%;
+              
+              img {
+                min-width: 75%;
+                height: auto;
+              }
+            }
+          }
+        }
+      }
+
+      .chart-container {
+        background: rgba(255, 255, 255, 0);
+        box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        backdrop-filter: blur(4px);
+        border-radius: 10px;
+        width: 75vw;
+        align-self: center;
       }
     }
   }
 }
 
-@keyframes lds-dual-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@media screen and (min-width: 992px) {
-  main {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
+@media screen and (min-width: 780px) {
+  html {
+    body {
+      main {
+        .weather-section {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .weather-section > :only-child {
+          grid-column-start: 2;
+        }
+      }
+    }
   }
 }
