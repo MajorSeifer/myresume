@@ -13,95 +13,55 @@ html body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
 }
 html body {
+  background-image: url("/assets/image/index-bg-alt.jpg");
   color: white;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
   padding: 0;
+  margin: 0;
   font-family: "Unbounded", sans-serif;
+  text-align: center;
 }
 html body main {
-  min-height: 95vh;
+  width: 50%;
+  margin: auto;
+}
+html body main section {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-html body main .center {
-  display: flex;
-  flex-direction: row;
-}
-html body main .center input {
-  width: 50vw;
-  box-sizing: border-box;
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-radius: 10px;
-  background-color: white;
-  background-image: url("../image/search-solid.svg");
-  background-position: 10px 10px;
-  background-size: 1.25rem;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  font-family: "Unbounded", sans-serif;
-}
-html body main .center button {
-  margin-left: 2%;
-  border: 2px solid rgba(255, 255, 255, 0);
-  border-radius: 10px;
-  background-color: white;
-  color: rgb(14, 46, 87);
-  font-family: "Unbounded", sans-serif;
-}
-html body main .weather-section {
-  display: flex;
-  flex-direction: column;
-  padding: 1%;
-  justify-content: center;
-}
-html body main .weather-section .div-day {
-  display: flex;
-  flex-direction: column;
-  margin: 2%;
-}
-html body main .weather-section .div-day .inner-section {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  justify-content: center;
-  vertical-align: middle;
-  padding: 2%;
-  background: rgba(255, 255, 255, 0);
+  padding: 3%;
+  background: rgba(0, 0, 0, 0.473);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(4px);
   border-radius: 10px;
 }
-html body main .weather-section .div-day .inner-section article {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  vertical-align: middle;
-  padding: 2%;
+html body main section article {
+  margin: 5%;
 }
-html body main .weather-section .div-day .inner-section article img {
-  min-width: 75%;
-  height: auto;
+html body main section article h3 {
+  font-size: 1rem;
 }
-html body main .chart-container {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  border-radius: 10px;
-  width: 75vw;
-  align-self: center;
+html body main section article button {
+  border: none;
+  background-color: rgb(255, 255, 255);
+}
+html body main section article button i {
+  font-size: 2rem;
+  color: rgb(31, 38, 135);
 }
 
 @media screen and (min-width: 780px) {
-  html body main .weather-section {
+  html body main section {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    margin-top: 15vh;
   }
-  html body main .weather-section > :only-child {
-    grid-column-start: 2;
+  html body footer {
+    position: absolute;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
   }
 }/*# sourceMappingURL=style.css.map */

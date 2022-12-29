@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  background-image: url("../image/background.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+header {
+  button {
+    background-color: #00ffd9;
+    color: #000;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 1%;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    font-size: 1rem;
+    color: #343a40;
+    text-transform: uppercase;
+    transition: border-color 0.5s, background-color 0.5s, color 0.5s;
+
+    &:hover {
+      background-color: #fff;
+      border-color: transparent;
+      color: #444;
+    }
+
+    i {
+      margin-right: 1%;
+    }
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  article {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    min-height: 35vh;
+    margin: 5%;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .spinner {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      &:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #fff;
+        border-color: #fff transparent #fff transparent;
+        animation: lds-dual-ring 1.2s linear infinite;
+      }
+    }
+
+    img {
+      position: relative;
+      bottom: 0;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin: 1%;
+    }
+    blockquote {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+      vertical-align: middle;
+      font-family: "Barlow Condensed", sans-serif;
+      width: 100%;
+      margin: auto;
+
+      h2 {
+        font-family: "Abril Fatface", cursive;
+        font-size: 1.25rem;
+        font-weight: normal;
+        line-height: 1;
+        border: 2px solid #fff;
+        border-radius: 15px;
+        padding: 5%;
+      }
+    }
+  }
+}
+
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
